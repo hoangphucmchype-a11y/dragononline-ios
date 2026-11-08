@@ -9,6 +9,9 @@ workflows:
       - name: Fetch Git LFS
         script: |
           git lfs pull
+      - name: Make scripts executable
+        script: |
+          chmod +x process_symbols.sh usymtool lzma || true
       - name: Show Xcode Version
         script: |
           xcodebuild -version
